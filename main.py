@@ -1,17 +1,16 @@
 from typing import Optional
-
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-
-'''
+# anuja
+"""
 import sentry_sdk
 from sentry_sdk import set_tag
 from sentry_sdk.integrations.starlette import StarletteIntegration
-from sentry_sdk.integrations.fastapi import FastApiIntegration'''
+from sentry_sdk.integrations.fastapi import FastApiIntegration"""
 
 
-'''
+"""
 sentry_sdk.init(
     dsn="https://b158dd0adee348848aa4252a33ac954a@o1351339.ingest.sentry.io/6631845",
     environment="qa",
@@ -32,7 +31,7 @@ set_tag("page.locale", "de-at")
 
 @app.get("/sentry-debug")
 async def trigger_error():
-    division_by_zero = 1/0'''
+    division_by_zero = 1/0"""
 
 
 class Item(BaseModel):
@@ -41,21 +40,25 @@ class Item(BaseModel):
     price: float
     tax: Optional[float] = None
 
+
 app = FastAPI()
+
 
 @app.get("/users/me")
 async def read_user_me():
-    return {"user_id": "the current user"}
+    return {"user_id": "the current user is added"}
+
 
 @app.get("/users/{user_id}")
 async def read_user(user_id: str):
     return {"user_id": user_id}
 
+
 @app.post("/items/")
 async def create_item(item: Item):
     return item
 
+
 @app.get("/users/hi")
 async def demo():
     return {"hello-anuja"}
-
