@@ -55,5 +55,7 @@ async def read_user(user_id: str):
 async def create_item(item: Item):
     return item
 
-@app.post("/items/")
-async def
+@app.get("/users/hi")
+async def demo():
+    return {"hello-anuja"}
+
