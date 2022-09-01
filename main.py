@@ -1,6 +1,8 @@
 from typing import Optional
-from fastapi import FastAPI
+
 from pydantic import BaseModel
+
+from fastapi import FastAPI
 
 # anuja
 """
@@ -62,3 +64,8 @@ async def create_item(item: Item):
 @app.get("/users/hi")
 async def demo():
     return {"hello-anuja"}
+
+
+@app.get("/users/")
+async def ab():
+    return {"how r you"}
